@@ -17,7 +17,7 @@ SOURCES = [
     {"name":"UPSC Recruitment Tests","url":"https://cms.upsc.gov.in/recruitment-tests/notice/","base":"https://cms.upsc.gov.in","kind":"Central"},
     {"name":"UPSC What's New","url":"https://upsc.gov.in/whats-new","base":"https://upsc.gov.in","kind":"Central"},
     {"name":"Railway RRB Apply","url":"https://www.rrbapply.gov.in/","base":"https://www.rrbapply.gov.in","kind":"Central"},
-    {"name":"Indian Railways","url":"https://indianrailways.gov.in/","base":"https://indianrailways.gov.in","kind":"Central"},
+    {"name":"Railway Recruitment Boards","url":"https://rrb.indianrailways.gov.in/","base":"https://rrb.indianrailways.gov.in","kind":"Central"},
     {"name":"India Post Recruitments","url":"https://www.indiapost.gov.in/vacancies/recruitments?hl=en-US","base":"https://www.indiapost.gov.in","kind":"Central"},
     {"name":"India Post GDS","url":"https://www.indiapost.gov.in/gdsonlineengagement","base":"https://www.indiapost.gov.in","kind":"Central"},
     {"name":"IBPS","url":"https://www.ibps.in/","base":"https://www.ibps.in","kind":"Public Sector Banks"},
