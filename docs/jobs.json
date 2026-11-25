@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T08:56:23.747907+00:00",
+  "updated_at": "2026-11-25T16:25:47.426190+00:00",
   "jobs": [
     {
       "id": "feaf4884e581c8",
@@ -8,10 +8,53 @@
       "url": "https://ssckkr.gov.in/SelectionPost",
       "source_page": "https://ssckkr.gov.in/",
       "category": "Central",
-      "status": "Possible recruitment notice — application status must be verified",
+      "status": "Possible notice — verify official notification before applying",
       "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
-      "apply_url": "https://ssc.gov.in/",
-      "checked_at": "2026-11-25T08:54:25.295958+00:00"
+      "checked_at": "2026-11-25T16:17:32.463373+00:00"
+    },
+    {
+      "id": "1da943dcf4a644",
+      "authority": "India Post Recruitments",
+      "title": "Skip to main content Government of India Ministry of Communications Department of Posts Search services and documents across the India Post website भारत सरकार | Government of India",
+      "url": "https://www.indiapost.gov.in#main-content",
+      "source_page": "https://www.indiapost.gov.in/vacancies/recruitments?hl=en-US",
+      "category": "Central",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:19:28.578117+00:00"
+    },
+    {
+      "id": "aa498bfe5405af",
+      "authority": "India Post Recruitments",
+      "title": "Online GDS Recruitment",
+      "url": "https://www.indiapost.gov.in/vacancies/online-gds",
+      "source_page": "https://www.indiapost.gov.in/vacancies/recruitments?hl=en-US",
+      "category": "Central",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:19:28.579987+00:00"
+    },
+    {
+      "id": "7355b9307b5998",
+      "authority": "India Post GDS",
+      "title": "GDS Online Engagement",
+      "url": "https://www.indiapost.gov.in/gdsonlineengagement",
+      "source_page": "https://www.indiapost.gov.in/gdsonlineengagement",
+      "category": "Central",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:19:29.337596+00:00"
+    },
+    {
+      "id": "b9b904f72b2c82",
+      "authority": "India Post GDS",
+      "title": "Click Here to Login Important Notices Registration Notice: Candidates applying for GDS Online Engagement – Schedule II, July-2026 are required to register afresh. Registration Numb",
+      "url": "https://gdsrect.indiapost.gov.in/gdscandidate",
+      "source_page": "https://www.indiapost.gov.in/gdsonlineengagement",
+      "category": "Central",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:19:29.337681+00:00"
     },
     {
       "id": "c9efe411fb1179",
@@ -20,34 +63,42 @@
       "url": "https://www.ibps.in/index.php/management-trainees/",
       "source_page": "https://www.ibps.in/",
       "category": "Public Sector Banks",
-      "status": "Possible recruitment notice — application status must be verified",
+      "status": "Possible notice — verify official notification before applying",
       "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
-      "apply_url": "https://www.ibps.in/",
-      "checked_at": "2026-11-25T08:55:00.381896+00:00"
+      "checked_at": "2026-11-25T16:19:31.352440+00:00"
     },
     {
-      "id": "29ad594b92d04f",
+      "id": "234a1d19207749",
       "authority": "IBPS",
-      "title": "CRP-PO/MTs-XVI",
+      "title": "CRP-PO/MTs-XVI Posted on 01 Jul, 2026",
       "url": "https://www.ibps.in/wp-content/uploads/Detailed-Notification_CRP-PO-XVI_Final_V1_30.06.2026.pdf",
       "source_page": "https://www.ibps.in/",
       "category": "Public Sector Banks",
-      "status": "Possible recruitment notice — application status must be verified",
+      "status": "Possible notice — verify official notification before applying",
       "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
-      "apply_url": "https://www.ibps.in/",
-      "checked_at": "2026-11-25T08:55:00.381972+00:00"
+      "checked_at": "2026-11-25T16:19:31.352592+00:00"
     },
     {
-      "id": "e32932345dfd20",
+      "id": "84c0b6d32b16bc",
       "authority": "IBPS",
-      "title": "CRP-PO/MTs & SPL-XVI",
+      "title": "CRP-PO/MTs & SPL-XVI Posted on 30 Jun, 2026",
       "url": "https://www.ibps.in/wp-content/uploads/PO_SPL_Combined_Window_CRP-XVI.pdf",
       "source_page": "https://www.ibps.in/",
       "category": "Public Sector Banks",
-      "status": "Possible recruitment notice — application status must be verified",
+      "status": "Possible notice — verify official notification before applying",
       "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
-      "apply_url": "https://www.ibps.in/",
-      "checked_at": "2026-11-25T08:55:00.382019+00:00"
+      "checked_at": "2026-11-25T16:19:31.352726+00:00"
+    },
+    {
+      "id": "73dc9e8851541e",
+      "authority": "IBPS",
+      "title": "SBI Recruitment of Specialist Cadre Officer (Assistant Manager -Engineer (Fire)) Registration From 04-Nov-2026",
+      "url": "https://ibpsreg.ibps.in/sbiameoct26/",
+      "source_page": "https://www.ibps.in/",
+      "category": "Public Sector Banks",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:19:31.353194+00:00"
     },
     {
       "id": "76f9efd46ba2bb",
@@ -56,10 +107,97 @@
       "url": "https://www.ibps.in/index.php/management-trainees",
       "source_page": "https://www.ibps.in/",
       "category": "Public Sector Banks",
-      "status": "Possible recruitment notice — application status must be verified",
+      "status": "Possible notice — verify official notification before applying",
       "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
-      "apply_url": "https://www.ibps.in/",
-      "checked_at": "2026-11-25T08:55:00.382224+00:00"
+      "checked_at": "2026-11-25T16:19:31.353339+00:00"
+    },
+    {
+      "id": "9eb5cdf44fe445",
+      "authority": "SBI Careers",
+      "title": "Assistant Manager (Law) - LIST OF CANDIDATES PROVISIONALLY SELECTED (NEW)",
+      "url": "https://sbi.co.in/documents/77530/57941334/SCO_02_AM-RESULT-5+FORMAT.pdf/5373b748-f632-5496-a222-b555fb48c77b?t=1795613150591",
+      "source_page": "https://sbi.co.in/web/careers/current-openings",
+      "category": "Public Sector Banks",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:19:33.701390+00:00"
+    },
+    {
+      "id": "4268bb5b534de9",
+      "authority": "SBI Careers",
+      "title": "ASSISTANT VICE PRESIDENT (IS AUDIT) - LIST OF CANDIDATES PROVISIONALLY SELECTED ANNOUNCED (109 KB)",
+      "url": "https://sbi.co.in/documents/77530/52947104/SCO_27_SELECT_LIST_AVP%28IS+AUDIT%29.pdf/c8925d1f-d8e3-a1a7-b703-7c6a2446215e?t=1779799823836",
+      "source_page": "https://sbi.co.in/web/careers/current-openings",
+      "category": "Public Sector Banks",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:19:33.703364+00:00"
+    },
+    {
+      "id": "34f47065d0b69b",
+      "authority": "SBI Careers",
+      "title": "ASSISTANT VICE PRESIDENT (UX) - LIST OF CANDIDATES PROVISIONALLY SELECTED ANNOUNCED (175 KB) (NEW)",
+      "url": "https://sbi.co.in/documents/77530/52947104/02052026_sco_22_select+list_AVP%28UX%29.pdf/540fcf6a-bb01-7767-53a6-c86b4e4c416a?t=1777708381885",
+      "source_page": "https://sbi.co.in/web/careers/current-openings",
+      "category": "Public Sector Banks",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:19:33.703874+00:00"
+    },
+    {
+      "id": "aae99b87d4c839",
+      "authority": "SBI Careers",
+      "title": "ASSISTANT VICE PRESIDENT (IS AUDIT) - LIST OF CANDIDATES PROVISIONALLY SELECTED (NEW)",
+      "url": "https://sbi.co.in/documents/77530/52947104/20112025_SCO_05_SELECT_LIST_AVP%28IS+Audit%29.pdf/fc5d0176-9a7c-ad54-d1da-c3b997ec3dab?t=1763617028475",
+      "source_page": "https://sbi.co.in/web/careers/current-openings",
+      "category": "Public Sector Banks",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:19:33.705788+00:00"
+    },
+    {
+      "id": "0c7794626ac405",
+      "authority": "SBI Careers",
+      "title": "LIST OF CANDIDATES PROVISIONALLY SELECTED - ASSISTANT MANAGER (ENGINEER – CIVIL) (NEW)",
+      "url": "https://sbi.co.in/documents/77530/52947104/sco_18_AM_CIVIL_Select_List.pdf/9cdb360c-995a-234e-76c6-011a65f3e96c?t=1747288793193",
+      "source_page": "https://sbi.co.in/web/careers/current-openings",
+      "category": "Public Sector Banks",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:19:33.707893+00:00"
+    },
+    {
+      "id": "dfc0d61b5b313f",
+      "authority": "SBI Careers",
+      "title": "LIST OF CANDIDATES PROVISIONALLY SELECTED - ASSISTANT MANAGER (ENGINEER – ELECTRICAL) (NEW)",
+      "url": "https://sbi.co.in/documents/77530/52947104/sco_18_AM_ELECT_Select_List.pdf/37ac6edd-f09e-4619-846a-5b5c6e9f9b95?t=1747288813577",
+      "source_page": "https://sbi.co.in/web/careers/current-openings",
+      "category": "Public Sector Banks",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:19:33.707939+00:00"
+    },
+    {
+      "id": "0a6f6e74433af1",
+      "authority": "SBI Careers",
+      "title": "MARKS SECURED BY THE CANDIDATES - ASSISTANT MANAGER (ENGINEER – CIVIL) & ASSISTANT MANAGER (ENGINEER – ELECTRICAL) (NEW)",
+      "url": "https://bank.sbi/web/careers/sco-25-marks",
+      "source_page": "https://sbi.co.in/web/careers/current-openings",
+      "category": "Public Sector Banks",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:19:33.707987+00:00"
+    },
+    {
+      "id": "8dd3be0511d527",
+      "authority": "LIC Careers",
+      "title": "Recruitment of AAO Generalists Specialists Assistant Engineers 2025",
+      "url": "https://licindia.in/recruitment-of-aao-generalists/-specialists/-assistant-engineers-2025",
+      "source_page": "https://licindia.in/careers",
+      "category": "Public Sector Insurance",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:21:30.599668+00:00"
     },
     {
       "id": "f2428023e97cae",
@@ -68,20 +206,338 @@
       "url": "https://www.isro.gov.in/ICRB_Recruitment11.html",
       "source_page": "https://www.isro.gov.in/Careers.html",
       "category": "Central",
-      "status": "Possible recruitment notice — application status must be verified",
+      "status": "Possible notice — verify official notification before applying",
       "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
-      "apply_url": "https://www.isro.gov.in/ICRB_Recruitment11.html",
-      "checked_at": "2026-11-25T08:55:57.664784+00:00"
+      "checked_at": "2026-11-25T16:23:21.840941+00:00"
+    },
+    {
+      "id": "1f791c8881e129",
+      "authority": "ISRO Careers",
+      "title": "ADVT NO. SDSC SHAR/RMT/03/2026 Dated 19.10.2026 Recruitment to the post of Technical Assistant, Scientific Assistant, Library Assistant ‘A’, Nurse ‘B’, Technician ‘B’/Draughtsman ‘",
+      "url": "https://www.isro.gov.in/SDSCRecruitment26.html",
+      "source_page": "https://www.isro.gov.in/Careers.html",
+      "category": "Central",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:23:21.841296+00:00"
+    },
+    {
+      "id": "559d27118190e7",
+      "authority": "ISRO Careers",
+      "title": "Advt. No. ISRO:ICRB:03(EMC):2026 Dated 27-08-2026 - Date of conduct of Computer Based Test (CBT) is postponed to 29.10.2026 (Thursday) Read More",
+      "url": "https://www.isro.gov.in/ICRB_Recruitment13.html",
+      "source_page": "https://www.isro.gov.in/Careers.html",
+      "category": "Central",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:23:21.841622+00:00"
+    },
+    {
+      "id": "9449507f3a81ef",
+      "authority": "ISRO Careers",
+      "title": "Advt. No. IPRC/RMT/2026/01 dated 12.09.2026 - Inviting online applications for the posts of Technical Assistant, Technician 'B', Cook 'A' and Fireman 'A'. Read More",
+      "url": "https://www.isro.gov.in/IPRCRecruitment4.html",
+      "source_page": "https://www.isro.gov.in/Careers.html",
+      "category": "Central",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:23:21.842018+00:00"
+    },
+    {
+      "id": "2536cdf38a9835",
+      "authority": "ISRO Careers",
+      "title": "Advt. No. ISTRAC:02:2026 dated 27.06.2026 - The Computer Based Test (CBT) is scheduled on 25.09.2026.",
+      "url": "https://www.isro.gov.in/ISTRACRecruitment4.html",
+      "source_page": "https://www.isro.gov.in/Careers.html",
+      "category": "Central",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:23:21.842297+00:00"
+    },
+    {
+      "id": "8fa14f256f1b8a",
+      "authority": "ISRO Careers",
+      "title": "Advt No. LPSC/02/2026 dated 15.08.2026 Recruitment to the post of Technical Assistant, Technician 'B', Draughtsman 'B' and Fireman 'A' in LPSC. Read More",
+      "url": "https://www.isro.gov.in/LPSCRecruitment13.html",
+      "source_page": "https://www.isro.gov.in/Careers.html",
+      "category": "Central",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:23:21.842616+00:00"
+    },
+    {
+      "id": "9b730049ef3c6c",
+      "authority": "SEBI Vacancies",
+      "title": "Special Recruitment Drive for PWD - List of candidates selected for the post of Officer Grade 'A'(Assistant Manager)",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=36",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.917171+00:00"
+    },
+    {
+      "id": "a1917f39fe98c1",
+      "authority": "SEBI Vacancies",
+      "title": "SEBI Recruitment Exercise for Officer Grade A (Assistant Manager) - 2017",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=45",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.917345+00:00"
+    },
+    {
+      "id": "c896073953a2de",
+      "authority": "SEBI Vacancies",
+      "title": "SEBI Recruitment Exercise for Officer Grade A (Assistant Manager) - Information Technology Stream 2017",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=98",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.918070+00:00"
+    },
+    {
+      "id": "97aeed45ff041e",
+      "authority": "SEBI Vacancies",
+      "title": "Recruitment of Officer Grade A (Assistant Manager) - General Stream, Legal Stream, Information Technology Stream and Engineering Stream- 2018",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=121",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.918360+00:00"
+    },
+    {
+      "id": "d10bcb442fec73",
+      "authority": "SEBI Vacancies",
+      "title": "SEBI Recruitment Exercise for Officer Grade A (Assistant Manager) - General Stream, Legal Stream, Information Technology Stream, Engineering Stream, Research Stream and Official La",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=147",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.918607+00:00"
+    },
+    {
+      "id": "c696bccbc5d36a",
+      "authority": "SEBI Vacancies",
+      "title": "SEBI Recruitment Exercise for Officer Grade A (Assistant Manager) 2020 for various streams- Online link for change of exam centres/withdrawal of application",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=156",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.918859+00:00"
+    },
+    {
+      "id": "f5215a0101f54e",
+      "authority": "SEBI Vacancies",
+      "title": "SEBI Recruitment Exercise for Officer Grade A (Assistant Manager) - General Stream, Legal Stream, Information Technology Stream, Research Stream and Official Language Stream 2022",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=199",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.919217+00:00"
+    },
+    {
+      "id": "e4b6e6a490878a",
+      "authority": "SEBI Vacancies",
+      "title": "SEBI Recruitment Exercise for Officer Grade A (Assistant Manager) 2022 - Frequently Asked Questions",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=200",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.919255+00:00"
+    },
+    {
+      "id": "7c00c4a846cddd",
+      "authority": "SEBI Vacancies",
+      "title": "SEBI Recruitment Exercise - Recruitment of Officer Grade A (Assistant Manager) 2022 - Information Technology Stream",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=248",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.919554+00:00"
+    },
+    {
+      "id": "dbaba490f25ce4",
+      "authority": "SEBI Vacancies",
+      "title": "Information Handout - Recruitment of Officer Grade A (Assistant Manager) Information Technology Stream 2022 - Phase I and Paper 1 of Phase II exam",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=259",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.919653+00:00"
+    },
+    {
+      "id": "a010140f30f68d",
+      "authority": "SEBI Vacancies",
+      "title": "Recruitment of Officer Grade A (Assistant Manager) Information Technology Stream 2022 - Information Handout for Paper 2 of Phase II",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=268",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.919772+00:00"
+    },
+    {
+      "id": "d1d856c5080142",
+      "authority": "SEBI Vacancies",
+      "title": "Recruitment of Officer Grade A (Assistant Manager) Information Technology Stream 2022- Important Information",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=270",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.919810+00:00"
+    },
+    {
+      "id": "c005a621c4801d",
+      "authority": "SEBI Vacancies",
+      "title": "SEBI Recruitment Exercise - Recruitment of Officer Grade A (Assistant Manager) 2023 - Legal Stream",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=293",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.919946+00:00"
+    },
+    {
+      "id": "1f456ed4882c6a",
+      "authority": "SEBI Vacancies",
+      "title": "Advance Intimation - Recruitment of Officer Grade A (Assistant Manager) 2024 - General, Legal, Information Technology, Engineering (Electrical), Research and Official Language Stre",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=337",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.920251+00:00"
+    },
+    {
+      "id": "a30188508aa539",
+      "authority": "SEBI Vacancies",
+      "title": "Notice regarding Recruitment of Officer Grade A (Assistant Manager) 2024 General Legal Information Technology Engineering Electrical Research and Official Language Stream",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=341",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.920293+00:00"
+    },
+    {
+      "id": "4784e49a425ab1",
+      "authority": "SEBI Vacancies",
+      "title": "Recruitment of Officer Grade A (Assistant Manager) 2024 - General Stream, Legal Stream, Information Technology Stream, Research Stream, Official Language Stream and Engineering (El",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=343",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.920334+00:00"
+    },
+    {
+      "id": "405ebbb942c339",
+      "authority": "SEBI Vacancies",
+      "title": "Information Handout - Recruitment of Officer Grade A (Assistant Manager) 2024 - General, Legal, Information Technology, Research, Official Language and Engineering (Electrical) Str",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=348",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.920433+00:00"
+    },
+    {
+      "id": "40d925cc3d0fb9",
+      "authority": "SEBI Vacancies",
+      "title": "Corrigendum to Advertisement dated June 11, 2024 for Recruitment of Officer Grade A (Assistant Manager) 2024 - General Stream, Legal Stream, Information Technology Stream, Research",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=358",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.920521+00:00"
+    },
+    {
+      "id": "2e2f7e9eceb977",
+      "authority": "SEBI Vacancies",
+      "title": "Information Handout - Recruitment of Officer Grade A (Assistant Manager) 2024 - General Stream, Legal Stream, Information Technology Stream, Research Stream, Official Language Stre",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=360",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.920567+00:00"
+    },
+    {
+      "id": "ab807be32d6119",
+      "authority": "SEBI Vacancies",
+      "title": "Advance Intimation - Recruitment of Officer Grade A (Assistant Manager) 2025 - General Stream, Legal Stream, Information Technology Stream, Research Stream, Official Language Strea",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=391",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.920806+00:00"
+    },
+    {
+      "id": "72ccb58762df4e",
+      "authority": "SEBI Vacancies",
+      "title": "Recruitment of Officer Grade A (Assistant Manager) 2025 - General Stream, Legal Stream, Information Technology Stream, Research Stream, Official Language Stream, Engineering (Elect",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=392",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.920851+00:00"
+    },
+    {
+      "id": "a78c3adbc43993",
+      "authority": "SEBI Vacancies",
+      "title": "Addendum - Recruitment of Officer Grade A (Assistant Manager) 2025",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=394",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.920885+00:00"
+    },
+    {
+      "id": "faa120362b422d",
+      "authority": "SEBI Vacancies",
+      "title": "Recruitment of Officer Grade A (Assistant Manager) 2025 - General Stream, Legal Stream, Information Technology Stream, Research Stream, Official Language Stream, Engineering (Elect",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=397",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.920929+00:00"
+    },
+    {
+      "id": "7ae107fb09ee8f",
+      "authority": "SEBI Vacancies",
+      "title": "Recruitment of Officer Grade A (Assistant Manager) 2025 - General Stream, Legal Stream, Information Technology Stream,Research Stream,Official Language Stream,Engineering Electrica",
+      "url": "https://www.sebi.gov.in/sebiweb/other/careerdetail.jsp?careerId=413",
+      "source_page": "https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes",
+      "category": "Statutory Institution",
+      "status": "Possible notice — verify official notification before applying",
+      "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T16:25:40.921012+00:00"
     }
   ],
   "source_errors": [
     {
-      "source": "Kerala PSC",
-      "error": "404 Client Error: Not Found for url: https://www.keralapsc.gov.in/extra-ordinary-gazette-date"
-    },
-    {
       "source": "Kerala High Court",
       "error": "HTTPSConnectionPool(host='hckerala.gov.in', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='hckerala.gov.in', port=443): Failed to resolve 'hckerala.gov.in' ([Errno -2] Name or service not k"
+    },
+    {
+      "source": "Kerala Employment",
+      "error": "403 Client Error: Forbidden for url: https://employment.kerala.gov.in/"
     },
     {
       "source": "Railway RRB Apply",
@@ -89,15 +545,15 @@
     },
     {
       "source": "Indian Railways",
-      "error": "HTTPSConnectionPool(host='indianrailways.gov.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='indianrailways.gov.in', port=443) at 0x74d5dd624cb0>, 'Connection to indianrailways.gov.in t"
+      "error": "HTTPSConnectionPool(host='indianrailways.gov.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='indianrailways.gov.in', port=443) at 0x7b418bf1a780>, 'Connection to indianrailways.gov.in t"
     },
     {
       "source": "NABARD Careers",
-      "error": "HTTPSConnectionPool(host='www.nabard.org', port=443): Max retries exceeded with url: /careers-notices1.aspx?cid=693&id=26 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.nabard.org', port=443) at 0x74d5dd280bc0>, 'Connection to ww"
+      "error": "HTTPSConnectionPool(host='www.nabard.org', port=443): Max retries exceeded with url: /careers-notices1.aspx?cid=693&id=26 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.nabard.org', port=443) at 0x7b418c169ca0>, 'Connection to ww"
     },
     {
-      "source": "Employment News",
-      "error": "HTTPSConnectionPool(host='employmentnews.gov.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='employmentnews.gov.in', port=443) at 0x74d5dd6f18b0>, 'Connection to employmentnews.gov.in t"
+      "source": "Employment News All Jobs",
+      "error": "HTTPSConnectionPool(host='employmentnews.gov.in', port=443): Max retries exceeded with url: /newemp/AllJobs.aspx?k=All (Caused by ConnectTimeoutError(<HTTPSConnection(host='employmentnews.gov.in', port=443) at 0x7b418ba414c0>, 'Connection t"
     },
     {
       "source": "DRDO",
@@ -105,9 +561,13 @@
     },
     {
       "source": "ESIC",
-      "error": "HTTPSConnectionPool(host='www.esic.gov.in', port=443): Max retries exceeded with url: /recruitments (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.esic.gov.in', port=443) at 0x74d5dd5d55e0>, 'Connection to www.esic.gov.in timed o"
+      "error": "HTTPSConnectionPool(host='www.esic.gov.in', port=443): Max retries exceeded with url: /recruitments (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.esic.gov.in', port=443) at 0x7b418bacb1d0>, 'Connection to www.esic.gov.in timed o"
+    },
+    {
+      "source": "Department of Financial Services",
+      "error": "HTTPSConnectionPool(host='www.financialservices.gov.in', port=443): Max retries exceeded with url: /vacancies (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, ce"
     }
   ],
-  "sources_checked": 18,
+  "sources_checked": 26,
   "notice": "Broad official-portal keyword monitoring, not exhaustive. Matches are unverified notices, not confirmed eligible vacancies. Read the official notification before applying."
 }
