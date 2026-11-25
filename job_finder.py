@@ -45,11 +45,12 @@ KEYWORDS = re.compile(
 )
 EXCLUDE_HINTS = re.compile(r"\b(shortlisted|short list|response sheet|answer key|admit card|hall ticket|result|ranked list|exam held|objection redressal|provisional list|final list)\b", re.I)
 ROLE_HINTS = re.compile(
-    r"\b(clerk|ldc|lower division|junior assistant|office assistant|office attendant|"
-    r"data entry|typist|computer assistant|computer operator|mts|multi tasking|chsl|ntpc|"
-    r"level[- ]?1|group[- ]?d|peon|attender|helper|gds|gramin dak|branch postmaster|abpm|"
-    r"postman|mail guard|postal assistant|apprentice|tradesman|constable|forest guard|"
-    r"driver|stenographer|selection post)\b", re.I
+    r"\b(clerk|ldc|lower division|assistant|attendant|data entry|typist|computer|"
+    r"operator|mts|multi tasking|chsl|ntpc|level[- ]?1|group[- ]?d|peon|helper|"
+    r"support staff|watchman|security guard|fireman|cleaner|gds|gramin dak|"
+    r"branch postmaster|abpm|postman|mail guard|postal assistant|apprentice|"
+    r"tradesman|constable|forest guard|driver|stenographer|selection post|"
+    r"technician|lab assistant|staff nurse)\b", re.I
 )
 SESSION = requests.Session()
 retry_policy = Retry(total=3, connect=3, read=3, status=3, backoff_factor=1.5,
