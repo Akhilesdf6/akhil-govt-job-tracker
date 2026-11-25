@@ -9,7 +9,8 @@ from bs4 import BeautifulSoup
 # Broad official-portal monitoring; not an exhaustive vacancy feed.
 SOURCES = [
     {"name":"Kerala PSC","url":"https://www.keralapsc.gov.in/","base":"https://www.keralapsc.gov.in","kind":"Kerala State"},
-    {"name":"Kerala High Court","url":"https://hckerala.gov.in/","base":"https://hckerala.gov.in","kind":"Kerala State"},
+    {"name":"Kerala High Court Main Site","url":"https://highcourt.kerala.gov.in/","base":"https://highcourt.kerala.gov.in","kind":"Kerala State"},
+    {"name":"Kerala High Court Recruitment Portal","url":"https://hckrecruitment.keralacourts.in/","base":"https://hckrecruitment.keralacourts.in","kind":"Kerala State"},
     {"name":"Kerala Employment","url":"https://employment.kerala.gov.in/","base":"https://employment.kerala.gov.in","kind":"Kerala State"},
     {"name":"SSC","url":"https://ssc.gov.in/","base":"https://ssc.gov.in","kind":"Central"},
     {"name":"SSC Karnataka-Kerala Region","url":"https://ssckkr.gov.in/","base":"https://ssckkr.gov.in","kind":"Central"},
@@ -28,7 +29,7 @@ SOURCES = [
     {"name":"ISRO Careers","url":"https://www.isro.gov.in/Careers.html","base":"https://www.isro.gov.in","kind":"Central"},
     {"name":"DRDO","url":"https://www.drdo.gov.in/","base":"https://www.drdo.gov.in","kind":"Central"},
     {"name":"ESIC","url":"https://www.esic.gov.in/recruitments","base":"https://www.esic.gov.in","kind":"Central"},
-    {"name":"Department of Financial Services","url":"https://www.financialservices.gov.in/vacancies","base":"https://www.financialservices.gov.in","kind":"Central Government"},
+    {"name":"Department of Financial Services","url":"https://financialservices.gov.in/vacancies","base":"https://financialservices.gov.in","kind":"Central Government"},
     {"name":"Food Corporation of India","url":"https://fci.gov.in/recruitment","base":"https://fci.gov.in","kind":"Central PSU"},
     {"name":"SEBI Vacancies","url":"https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes","base":"https://www.sebi.gov.in","kind":"Statutory Institution"},
     {"name":"NITI Aayog Recruitment","url":"https://www.niti.gov.in/work-niti/vacancy-circular","base":"https://www.niti.gov.in","kind":"Central Government"},
