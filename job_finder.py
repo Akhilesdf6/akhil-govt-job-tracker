@@ -121,27 +121,51 @@ def main():
     except (OSError, ValueError): pass
     new = [j for j in jobs if j["id"] not in old]
     if new:
-        lines=["🔔 AKHIL GOVT JOB TRACKER", "━━━━━━━━━━━━━━━━━━"]
-        for j in new[:6]:
+        # Clear bilingual alert. Keep all facts marked unverified until the official PDF is checked.
+        lines = [
+            "🔔 AKHIL GOVT JOB ALERT",
+            "പുതിയ റിക്രൂട്ട്മെന്റ് അറിയിപ്പ് കണ്ടെത്തി",
+            "━━━━━━━━━━━━━━━━━━━━"
+        ]
+        for index, j in enumerate(new[:6], start=1):
             lines += [
-                "🟡 NEW POSSIBLE RECRUITMENT",
-                f"🏢 Department: {j['authority']}",
-                f"💼 Post: {j['title']}",
-                f"📍 Location/Scope: {j['category']}",
-                "🎓 Qualification: See official notification",
-                "🎂 Age limit: See official notification",
-                "🏷️ SC reservation: Check notification (not inferred)",
-                "💰 Salary: See official notification",
-                "📅 Last date: Check official notification",
-                "⚠️ Eligibility: NOT VERIFIED",
-                f"🔗 Official Notification: {j['url']}",
-                f"📝 Official Apply Portal: {j['apply_url']}",
-                "━━━━━━━━━━━━━━━━━━"
+                f"📌 അറിയിപ്പ് {index}",
+                f"🏛️ വകുപ്പ്: {j['authority']}",
+                f"💼 തസ്തിക: {j['title']}",
+                f"📍 വിഭാഗം: {j['category']}",
+                "🎓 യോഗ്യത: ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
+                "🎂 പ്രായപരിധി: ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
+                "🏷️ SC ഇളവ്/സംവരണം: വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
+                "💰 ശമ്പളം: ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
+                "📅 അവസാന തീയതി: സ്ഥിരീകരിച്ചിട്ടില്ല — വിജ്ഞാപനം പരിശോധിക്കുക",
+                "⚠️ നിങ്ങൾക്ക് അപേക്ഷിക്കാമോ?: ഇനിയും സ്ഥിരീകരിച്ചിട്ടില്ല",
+                f"📄 ഔദ്യോഗിക വിജ്ഞാപനം: {j['url']}",
+                f"📝 അപേക്ഷാ പോർട്ടൽ: {j['apply_url']}",
+                "ℹ️ ശ്രദ്ധിക്കുക: അപേക്ഷാ പോർട്ടൽ പൊതുവായ പോർട്ടലായിരിക്കാം; ഈ തസ്തികയുടെ Apply Now ലിങ്ക് വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക.",
+                "━━━━━━━━━━━━━━━━━━━━"
             ]
-        if len(new)>6:
-            lines.append(f"+ {len(new)-6} more possible notices. Dashboard: https://akhilesdf6.github.io/akhil-govt-job-tracker/")
-        lines.append("Apply only after confirming the application window is OPEN and you meet every condition.")
-        send_telegram("\\n".join(lines)[:3900])
+        if len(new) > 6:
+            lines.append(f"കൂടുതൽ {len(new)-6} അറിയിപ്പുകൾ ഡാഷ്ബോർഡിൽ കാണാം: https://akhilesdf6.github.io/akhil-govt-job-tracker/")
+        lines.append("അപേക്ഷിക്കുന്നതിന് മുമ്പ് ഔദ്യോഗിക വിജ്ഞാപനം വായിച്ച് യോഗ്യതയും അവസാന തീയതിയും ഉറപ്പാക്കുക.")
+        # Telegram text limit is 4096 characters. Send safe-sized chunks, never truncate a job card.
+        message = "\\n".join(lines)
+        if len(message) <= 3900:
+            send_telegram(message)
+        else:
+            for j in new[:6]:
+                card = [
+                    "🔔 AKHIL GOVT JOB ALERT",
+                    f"🏛️ വകുപ്പ്: {j['authority']}",
+                    f"💼 തസ്തിക: {j['title']}",
+                    f"📍 വിഭാഗം: {j['category']}",
+                    "🎓 യോഗ്യത / 🎂 പ്രായം / 💰 ശമ്പളം / 📅 അവസാന തീയതി: ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
+                    "🏷️ SC ഇളവ്/സംവരണം: വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
+                    "⚠️ അപേക്ഷാ യോഗ്യത: സ്ഥിരീകരിച്ചിട്ടില്ല",
+                    f"📄 വിജ്ഞാപനം: {j['url']}",
+                    f"📝 അപേക്ഷാ പോർട്ടൽ: {j['apply_url']}",
+                    "അപേക്ഷിക്കുന്നതിന് മുമ്പ് ഔദ്യോഗിക വിജ്ഞാപനം പരിശോധിക്കുക."
+                ]
+                send_telegram("\\n".join(card))
     with open("seen_ids.json","w",encoding="utf-8") as f:
         json.dump(sorted(old|{j["id"] for j in jobs}),f)
     print(f"Checked {len(SOURCES)} official portals; collected {len(jobs)} possible notices; {len(new)} new; {len(errors)} source errors.")
