@@ -6,8 +6,13 @@
 <p id="updated" class="muted">Loading…</p><div id="jobs"></div>
 <script>
 fetch('./jobs.json').then(r=>r.json()).then(data=>{
-document.getElementById('updated').textContent='Last checked: '+new Date(data.updated_at).toLocaleString()+' · '+data.jobs.length+' possible notices';
+document.getElementById('updated').textContent='Last checked: '+new Date(data.updated_at).toLocaleString()+' · '+data.jobs.length+' possible notices · '+(data.sources_checked||0)+' sources configured';
 const root=document.getElementById('jobs');
+if(data.source_errors && data.source_errors.length){
+ const warning=document.createElement('p'); warning.className='warn';
+ warning.textContent='Source access warning: '+data.source_errors.length+' portal(s) could not be checked in this scan: '+data.source_errors.map(x=>x.source).join(', ')+'. Check those official portals manually; results may be incomplete.';
+ root.append(warning);
+}
 if(!data.jobs.length) root.textContent='No matching notice links were discovered in this scan. Check official portals directly below.';
 data.jobs.forEach(j=>{const d=document.createElement('article');d.className='job';const h=document.createElement('h3');h.textContent=j.title;const p=document.createElement('p');p.textContent=j.authority+' · '+j.category;const s=document.createElement('p');s.textContent=j.eligibility;const a=document.createElement('a');a.href=j.url;a.target='_blank';a.rel='noopener';a.textContent='Open official notice/source ↗';d.append(h,p,s,a);root.append(d)});
 }).catch(()=>{document.getElementById('updated').textContent='First scan pending. Please check again after GitHub Actions runs.'});
