@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Akhil Govt Job Tracker</title>
+<style>body{font:16px system-ui;max-width:900px;margin:32px auto;padding:0 16px;background:#f5f7fb;color:#182230}h1{margin-bottom:4px}.muted{color:#596579}.job{background:white;border:1px solid #dce2eb;border-radius:12px;padding:16px;margin:12px 0}.tag{font-size:12px;background:#e8eefc;padding:4px 8px;border-radius:20px}a{color:#1458b8} .warn{background:#fff6df;padding:12px;border-radius:8px}</style></head>
+<body><h1>AKHIL GOVT JOB TRACKER</h1><p class="muted">Kerala State + Central Government notice monitor</p>
+<p class="warn">Important: This dashboard finds possible matching notices by keywords. It does NOT certify eligibility. Open each official notification PDF and check qualification, age cutoff, SC reservation, physical standards and deadline before applying.</p>
+<p id="updated" class="muted">Loading…</p><div id="jobs"></div>
+<script>
+fetch('./jobs.json').then(r=>r.json()).then(data=>{
+document.getElementById('updated').textContent='Last checked: '+new Date(data.updated_at).toLocaleString()+' · '+data.jobs.length+' possible notices';
+const root=document.getElementById('jobs');
+if(!data.jobs.length) root.textContent='No matching notice links were discovered in this scan. Check official portals directly below.';
+data.jobs.forEach(j=>{const d=document.createElement('article');d.className='job';const h=document.createElement('h3');h.textContent=j.title;const p=document.createElement('p');p.textContent=j.authority+' · '+j.category;const s=document.createElement('p');s.textContent=j.eligibility;const a=document.createElement('a');a.href=j.url;a.target='_blank';a.rel='noopener';a.textContent='Open official notice/source ↗';d.append(h,p,s,a);root.append(d)});
+}).catch(()=>{document.getElementById('updated').textContent='First scan pending. Please check again after GitHub Actions runs.'});
+</script>
+<h2>Official portals</h2><ul><li><a href="https://www.keralapsc.gov.in/">Kerala PSC</a></li><li><a href="https://ssc.gov.in/">SSC</a></li><li><a href="https://rrb.indianrailways.gov.in/">Railway Recruitment Boards</a></li><li><a href="https://www.indiapost.gov.in/">India Post</a></li></ul></body></html>
