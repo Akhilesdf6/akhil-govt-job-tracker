@@ -27,18 +27,18 @@ SOURCES = [
     {"name":"ESIC", "url":"https://www.esic.gov.in/recruitments", "base":"https://www.esic.gov.in", "kind":"Central"},
 ]
 KEYWORDS = re.compile(
-    r"\\b(clerk|ldc|lower division|junior assistant|office assistant|office attendant|"
+    r"\b(clerk|ldc|lower division|junior assistant|office assistant|office attendant|"
     r"data entry|typist|computer assistant|computer operator|mts|multi tasking|chsl|ntpc|"
     r"level[- ]?1|group[- ]?d|peon|attender|helper|gds|gramin dak|branch postmaster|abpm|"
     r"postman|mail guard|postal assistant|apprentice|tradesman|constable|forest guard|"
-    r"driver|stenographer|selection post|recruitment|vacancy|vacancies|notification)\\b", re.I
+    r"driver|stenographer|selection post|recruitment|vacancy|vacancies|notification)\b", re.I
 )
 ROLE_HINTS = re.compile(
-    r"\\b(clerk|ldc|lower division|junior assistant|office assistant|office attendant|"
+    r"\b(clerk|ldc|lower division|junior assistant|office assistant|office attendant|"
     r"data entry|typist|computer assistant|computer operator|mts|multi tasking|chsl|ntpc|"
     r"level[- ]?1|group[- ]?d|peon|attender|helper|gds|gramin dak|branch postmaster|abpm|"
     r"postman|mail guard|postal assistant|apprentice|tradesman|constable|forest guard|"
-    r"driver|stenographer|selection post)\\b", re.I
+    r"driver|stenographer|selection post)\b", re.I
 )
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent":"AkhilGovtJobTracker/1.1 (official recruitment notice monitor; low-frequency requests)"})
