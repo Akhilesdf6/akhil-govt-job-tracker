@@ -1,53 +1,27 @@
 # AKHIL GOVT JOB TRACKER
 
-A personal vacancy-tracking project focused on Kerala State and Central Government recruitment, with Telegram notifications.
+A GitHub Actions based monitor for possible Kerala State and Central Government vacancies, with Telegram alerts and a GitHub Pages dashboard.
 
-## Current setup
+## What it does
+- Checks official Kerala PSC, SSC and RRB portal pages twice daily (08:30 and 19:30 India time).
+- Finds possible relevant notices using job-title keywords such as clerk, LDC, office assistant, data entry, MTS and NTPC.
+- Sends Telegram alerts for newly discovered links.
+- Publishes scan results to the dashboard: https://akhilesdf6.github.io/akhil-govt-job-tracker/
 
-- GitHub Actions workflow to test the Telegram bot connection.
-- Telegram credentials are read only from GitHub Actions Secrets.
-- No personal date of birth, category, or private profile details are stored in this public repository.
-- Vacancy collection and eligibility matching are **not yet active**. Do not treat this starter project as a live vacancy feed.
+## Required GitHub Actions secrets
+Repository → Settings → Secrets and variables → Actions:
+- TELEGRAM_BOT_TOKEN
+- TELEGRAM_CHAT_ID
 
-## 1. Add GitHub Actions secrets
+Never place the bot token in source code or send it in chat. Start your bot with /start before testing personal chat alerts.
 
-Open **Settings → Secrets and variables → Actions → New repository secret** and add:
+## Run
+Repository → Actions → Government Job Scan → Run workflow.
 
-- `TELEGRAM_BOT_TOKEN`: token from BotFather
-- `TELEGRAM_CHAT_ID`: your Telegram user chat ID
+## Enable the dashboard
+Repository → Settings → Pages → Build and deployment → Source: **GitHub Actions**. The Pages workflow will then deploy the `docs` folder.
 
-Never put the bot token in source code, README, issues, or chat messages.
+## Important eligibility note
+This first automated version is a notice-discovery system, not a legally reliable eligibility decision engine. It does not parse every notification PDF or certify age, SC category, qualification, district, physical standards, fee exemption or deadline. Check every linked official notification. The user's +2 is in progress, so roles requiring a completed Plus Two must not be treated as eligible until the qualification is passed. Do not rely on keyword matches alone.
 
-For personal alerts, open your bot in Telegram and press **Start** before testing.
-
-## 2. Test Telegram
-
-1. Open the repository's **Actions** tab.
-2. Select **Telegram Connection Test**.
-3. Press **Run workflow** → **Run workflow**.
-4. Open the run and check whether it completed successfully.
-5. Check Telegram for the test message.
-
-If it fails, verify the two secret names and values. Do not share the token publicly.
-
-## 3. Official recruitment portals
-
-Use the official notification and application pages; always read the original notification before applying.
-
-- Kerala PSC: https://www.keralapsc.gov.in/
-- Staff Selection Commission: https://ssc.gov.in/
-- UPSC: https://upsc.gov.in/
-- Railway Recruitment Boards: https://www.rrbapply.gov.in/
-- India Post GDS: https://indiapostgdsonline.gov.in/
-- Employment News: https://employmentnews.gov.in/
-
-## Eligibility rules planned
-
-The tracker should check the notification's qualification, age cut-off date, category relaxations, fee rules, deadline, and official application link. Higher-secondary-required posts must remain marked **not eligible yet** until the qualification is completed.
-
-## Important limitations
-
-- A scheduled scanner cannot guarantee that every vacancy is found.
-- Official websites may change layout or block automated access.
-- A vacancy is confirmed only when its official notification is available and checked.
-- This project will not submit applications or pay fees on your behalf.
+Sources: https://www.keralapsc.gov.in/ · https://ssc.gov.in/ · https://rrb.indianrailways.gov.in/ · https://www.indiapost.gov.in/
