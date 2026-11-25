@@ -9,24 +9,32 @@ from bs4 import BeautifulSoup
 # Official recruitment portals. This is a broad monitor, not an exhaustive feed:
 # many departments publish vacancies only on their own regional/department pages.
 SOURCES = [
-    {"name":"Kerala PSC", "url":"https://www.keralapsc.gov.in/extra-ordinary-gazette-date", "base":"https://www.keralapsc.gov.in", "kind":"Kerala State"},
-    {"name":"Kerala High Court", "url":"https://hckerala.gov.in/", "base":"https://hckerala.gov.in", "kind":"Kerala State"},
-    {"name":"SSC", "url":"https://ssc.gov.in/for-notice-board", "base":"https://ssc.gov.in", "kind":"Central"},
-    {"name":"SSC Karnataka-Kerala Region", "url":"https://ssckkr.gov.in/", "base":"https://ssckkr.gov.in", "kind":"Central"},
-    {"name":"UPSC", "url":"https://upsc.gov.in/whats-new", "base":"https://upsc.gov.in", "kind":"Central"},
-    {"name":"Railway RRB Apply", "url":"https://www.rrbapply.gov.in/", "base":"https://www.rrbapply.gov.in", "kind":"Central"},
-    {"name":"Indian Railways", "url":"https://indianrailways.gov.in/", "base":"https://indianrailways.gov.in", "kind":"Central"},
-    {"name":"India Post GDS", "url":"https://indiapostgdsonline.gov.in/", "base":"https://indiapostgdsonline.gov.in", "kind":"Central"},
-    {"name":"India Post", "url":"https://www.indiapost.gov.in/", "base":"https://www.indiapost.gov.in", "kind":"Central"},
-    {"name":"IBPS", "url":"https://www.ibps.in/", "base":"https://www.ibps.in", "kind":"Public Sector Banks"},
-    {"name":"SBI Careers", "url":"https://sbi.co.in/web/careers/current-openings", "base":"https://sbi.co.in", "kind":"Public Sector Banks"},
-    {"name":"RBI Opportunities", "url":"https://opportunities.rbi.org.in/scripts/vacancies.aspx", "base":"https://opportunities.rbi.org.in", "kind":"Statutory Institution"},
-    {"name":"NABARD Careers", "url":"https://www.nabard.org/careers-notices1.aspx?cid=693&id=26", "base":"https://www.nabard.org", "kind":"Statutory Institution"},
-    {"name":"LIC Careers", "url":"https://licindia.in/careers", "base":"https://licindia.in", "kind":"Public Sector Insurance"},
-    {"name":"Employment News", "url":"https://employmentnews.gov.in/", "base":"https://employmentnews.gov.in", "kind":"Central Government"},
-    {"name":"ISRO Careers", "url":"https://www.isro.gov.in/Careers.html", "base":"https://www.isro.gov.in", "kind":"Central"},
-    {"name":"DRDO", "url":"https://www.drdo.gov.in/", "base":"https://www.drdo.gov.in", "kind":"Central"},
-    {"name":"ESIC", "url":"https://www.esic.gov.in/recruitments", "base":"https://www.esic.gov.in", "kind":"Central"},
+    {"name":"Kerala PSC","url":"https://www.keralapsc.gov.in/","base":"https://www.keralapsc.gov.in","kind":"Kerala State"},
+    {"name":"Kerala High Court","url":"https://hckerala.gov.in/","base":"https://hckerala.gov.in","kind":"Kerala State"},
+    {"name":"Kerala Employment","url":"https://employment.kerala.gov.in/","base":"https://employment.kerala.gov.in","kind":"Kerala State"},
+    {"name":"SSC","url":"https://ssc.gov.in/","base":"https://ssc.gov.in","kind":"Central"},
+    {"name":"SSC Karnataka-Kerala Region","url":"https://ssckkr.gov.in/","base":"https://ssckkr.gov.in","kind":"Central"},
+    {"name":"UPSC Recruitment Tests","url":"https://cms.upsc.gov.in/recruitment-tests/notice/","base":"https://cms.upsc.gov.in","kind":"Central"},
+    {"name":"UPSC What's New","url":"https://upsc.gov.in/whats-new","base":"https://upsc.gov.in","kind":"Central"},
+    {"name":"Railway RRB Apply","url":"https://www.rrbapply.gov.in/","base":"https://www.rrbapply.gov.in","kind":"Central"},
+    {"name":"Indian Railways","url":"https://indianrailways.gov.in/","base":"https://indianrailways.gov.in","kind":"Central"},
+    {"name":"India Post Recruitments","url":"https://www.indiapost.gov.in/vacancies/recruitments?hl=en-US","base":"https://www.indiapost.gov.in","kind":"Central"},
+    {"name":"India Post GDS","url":"https://www.indiapost.gov.in/gdsonlineengagement","base":"https://www.indiapost.gov.in","kind":"Central"},
+    {"name":"IBPS","url":"https://www.ibps.in/","base":"https://www.ibps.in","kind":"Public Sector Banks"},
+    {"name":"SBI Careers","url":"https://sbi.co.in/web/careers/current-openings","base":"https://sbi.co.in","kind":"Public Sector Banks"},
+    {"name":"RBI Opportunities","url":"https://opportunities.rbi.org.in/scripts/vacancies.aspx","base":"https://opportunities.rbi.org.in","kind":"Statutory Institution"},
+    {"name":"NABARD Careers","url":"https://www.nabard.org/careers-notices1.aspx?cid=693&id=26","base":"https://www.nabard.org","kind":"Statutory Institution"},
+    {"name":"LIC Careers","url":"https://licindia.in/careers","base":"https://licindia.in","kind":"Public Sector Insurance"},
+    {"name":"Employment News All Jobs","url":"https://employmentnews.gov.in/newemp/AllJobs.aspx?k=All","base":"https://employmentnews.gov.in","kind":"Central Government"},
+    {"name":"ISRO Careers","url":"https://www.isro.gov.in/Careers.html","base":"https://www.isro.gov.in","kind":"Central"},
+    {"name":"DRDO","url":"https://www.drdo.gov.in/","base":"https://www.drdo.gov.in","kind":"Central"},
+    {"name":"ESIC","url":"https://www.esic.gov.in/recruitments","base":"https://www.esic.gov.in","kind":"Central"},
+    {"name":"Department of Financial Services","url":"https://www.financialservices.gov.in/vacancies","base":"https://www.financialservices.gov.in","kind":"Central Government"},
+    {"name":"Food Corporation of India","url":"https://fci.gov.in/recruitment","base":"https://fci.gov.in","kind":"Central PSU"},
+    {"name":"SEBI Vacancies","url":"https://www.sebi.gov.in/sebiweb/about/AboutAction.do?doVacancies=yes","base":"https://www.sebi.gov.in","kind":"Statutory Institution"},
+    {"name":"NITI Aayog Recruitment","url":"https://www.niti.gov.in/work-niti/vacancy-circular","base":"https://www.niti.gov.in","kind":"Central Government"},
+    {"name":"ITPO Careers","url":"https://www.itpo.gov.in/career-at-itpo","base":"https://www.itpo.gov.in","kind":"Central PSU"},
+    {"name":"National Career Service Government Vacancies","url":"https://www.ncs.gov.in/pages/govt-job-vacancies.aspx","base":"https://www.ncs.gov.in","kind":"Central Government"}
 ]
 KEYWORDS = re.compile(
     r"\b(clerk|ldc|lower division|junior assistant|office assistant|office attendant|"
@@ -56,12 +64,14 @@ def apply_url(authority, notice_url):
     portals = {
         "Kerala PSC": "https://thulasi.psc.kerala.gov.in/thulasi/",
         "SSC": "https://ssc.gov.in/",
-        "SSC Karnataka-Kerala Region": "https://ssc.gov.in/",
+        "SSC Karnataka-Kerala Region": "https://ssckkr.gov.in/",
         "India Post GDS": "https://indiapostgdsonline.gov.in/",
         "India Post": "https://www.indiapost.gov.in/",
         "IBPS": "https://www.ibps.in/",
         "SBI Careers": "https://sbi.co.in/web/careers/current-openings",
         "UPSC": "https://upsconline.nic.in/",
+        "India Post Recruitments": "https://www.indiapost.gov.in/vacancies/recruitments?hl=en-US",
+        "India Post GDS": "https://www.indiapost.gov.in/gdsonlineengagement",
         "Railway RRB Apply": "https://www.rrbapply.gov.in/",
     }
     return portals.get(authority, notice_url)
@@ -76,7 +86,10 @@ def get_jobs():
             soup = BeautifulSoup(response.text, "html.parser")
             found = set()
             for a in soup.select("a[href]"):
-                title = " ".join(a.get_text(" ", strip=True).split())
+                # Many official portals show "View" as the link text; include
+                # surrounding row/card text to capture the actual post title.
+                parent_text = " ".join(a.parent.get_text(" ", strip=True).split()) if a.parent else ""
+                title = " ".join((a.get_text(" ", strip=True) + " " + parent_text).split())
                 href = urljoin(source["base"], a.get("href", ""))
                 if not title or len(title) < 4 or not ROLE_HINTS.search(title) or EXCLUDE_HINTS.search(title):
                     continue
