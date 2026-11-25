@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T08:52:34.822455+00:00",
+  "updated_at": "2026-11-25T08:56:23.747907+00:00",
   "jobs": [
     {
       "id": "feaf4884e581c8",
@@ -11,7 +11,7 @@
       "status": "Possible recruitment notice — application status must be verified",
       "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
       "apply_url": "https://ssc.gov.in/",
-      "checked_at": "2026-11-25T08:49:48.038154+00:00"
+      "checked_at": "2026-11-25T08:54:25.295958+00:00"
     },
     {
       "id": "c9efe411fb1179",
@@ -23,7 +23,7 @@
       "status": "Possible recruitment notice — application status must be verified",
       "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
       "apply_url": "https://www.ibps.in/",
-      "checked_at": "2026-11-25T08:50:46.637998+00:00"
+      "checked_at": "2026-11-25T08:55:00.381896+00:00"
     },
     {
       "id": "29ad594b92d04f",
@@ -35,7 +35,7 @@
       "status": "Possible recruitment notice — application status must be verified",
       "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
       "apply_url": "https://www.ibps.in/",
-      "checked_at": "2026-11-25T08:50:46.638078+00:00"
+      "checked_at": "2026-11-25T08:55:00.381972+00:00"
     },
     {
       "id": "e32932345dfd20",
@@ -47,7 +47,7 @@
       "status": "Possible recruitment notice — application status must be verified",
       "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
       "apply_url": "https://www.ibps.in/",
-      "checked_at": "2026-11-25T08:50:46.638122+00:00"
+      "checked_at": "2026-11-25T08:55:00.382019+00:00"
     },
     {
       "id": "76f9efd46ba2bb",
@@ -59,7 +59,7 @@
       "status": "Possible recruitment notice — application status must be verified",
       "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
       "apply_url": "https://www.ibps.in/",
-      "checked_at": "2026-11-25T08:50:46.638327+00:00"
+      "checked_at": "2026-11-25T08:55:00.382224+00:00"
     },
     {
       "id": "f2428023e97cae",
@@ -71,7 +71,7 @@
       "status": "Possible recruitment notice — application status must be verified",
       "eligibility": "Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
       "apply_url": "https://www.isro.gov.in/ICRB_Recruitment11.html",
-      "checked_at": "2026-11-25T08:52:08.552115+00:00"
+      "checked_at": "2026-11-25T08:55:57.664784+00:00"
     }
   ],
   "source_errors": [
@@ -89,23 +89,15 @@
     },
     {
       "source": "Indian Railways",
-      "error": "HTTPSConnectionPool(host='indianrailways.gov.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='indianrailways.gov.in', port=443) at 0x78b8062a8440>, 'Connection to indianrailways.gov.in t"
-    },
-    {
-      "source": "India Post",
-      "error": "HTTPSConnectionPool(host='www.indiapost.gov.in', port=443): Read timed out. (read timeout=25)"
+      "error": "HTTPSConnectionPool(host='indianrailways.gov.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='indianrailways.gov.in', port=443) at 0x74d5dd624cb0>, 'Connection to indianrailways.gov.in t"
     },
     {
       "source": "NABARD Careers",
-      "error": "HTTPSConnectionPool(host='www.nabard.org', port=443): Max retries exceeded with url: /careers-notices1.aspx?cid=693&id=26 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.nabard.org', port=443) at 0x78b806226960>, 'Connection to ww"
-    },
-    {
-      "source": "LIC Careers",
-      "error": "HTTPSConnectionPool(host='licindia.in', port=443): Read timed out. (read timeout=25)"
+      "error": "HTTPSConnectionPool(host='www.nabard.org', port=443): Max retries exceeded with url: /careers-notices1.aspx?cid=693&id=26 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.nabard.org', port=443) at 0x74d5dd280bc0>, 'Connection to ww"
     },
     {
       "source": "Employment News",
-      "error": "HTTPSConnectionPool(host='employmentnews.gov.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='employmentnews.gov.in', port=443) at 0x78b806225a00>, 'Connection to employmentnews.gov.in t"
+      "error": "HTTPSConnectionPool(host='employmentnews.gov.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='employmentnews.gov.in', port=443) at 0x74d5dd6f18b0>, 'Connection to employmentnews.gov.in t"
     },
     {
       "source": "DRDO",
@@ -113,7 +105,7 @@
     },
     {
       "source": "ESIC",
-      "error": "HTTPSConnectionPool(host='www.esic.gov.in', port=443): Max retries exceeded with url: /recruitments (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.esic.gov.in', port=443) at 0x78b80624ce90>, 'Connection to www.esic.gov.in timed o"
+      "error": "HTTPSConnectionPool(host='www.esic.gov.in', port=443): Max retries exceeded with url: /recruitments (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.esic.gov.in', port=443) at 0x74d5dd5d55e0>, 'Connection to www.esic.gov.in timed o"
     }
   ],
   "sources_checked": 18,
