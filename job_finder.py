@@ -1,4 +1,4 @@
-import json, os, re, hashlib
+import json, os, re, hashlib, html
 from datetime import datetime, timezone
 from urllib.parse import urljoin
 import requests
@@ -97,7 +97,7 @@ def send_telegram(message):
     if not token or not chat_id:
         raise RuntimeError("Missing Telegram GitHub secrets")
     r = SESSION.post(f"https://api.telegram.org/bot{token}/sendMessage",
-        json={"chat_id":chat_id,"text":message,"disable_web_page_preview":True}, timeout=20)
+        json={"chat_id":chat_id,"text":message,"parse_mode":"HTML","disable_web_page_preview":True}, timeout=20)
     r.raise_for_status()
     if not r.json().get("ok"):
         raise RuntimeError("Telegram API rejected the message")
@@ -121,16 +121,29 @@ def main():
     new = [j for j in jobs if j["id"] not in old]
     if new:
         for j in new:
-            # Short, readable alert. No misleading generic application-portal link.
+            # Bold, scannable HTML alert with the official notice link.
+            authority = html.escape(j["authority"])
+            title = html.escape(j["title"])
+            category = html.escape(j["category"])
+            notice_url = html.escape(j["url"], quote=True)
             card = [
-                "🔔 AKHIL GOVT JOB ALERT",
-                "പുതിയ ജോലി അറിയിപ്പ് (പരിശോധിക്കേണ്ടത്)",
-                f"🏛️ വകുപ്പ്: {j['authority']}",
-                f"💼 തസ്തിക: {j['title']}",
-                "⚠️ യോഗ്യത/പ്രായം/SC ഇളവ്/അവസാന തീയതി: ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക.",
-                f"📄 ഔദ്യോഗിക ലിങ്ക്: {j['url']}",
-                "ℹ️ ഇത് സാധ്യതയുള്ള അറിയിപ്പാണ്; അപേക്ഷ തുറന്നിട്ടുണ്ടെന്നും നിങ്ങൾക്ക് യോഗ്യതയുണ്ടെന്നും ഇനിയും സ്ഥിരീകരിച്ചിട്ടില്ല.",
-                "📊 Dashboard: https://akhilesdf6.github.io/akhil-govt-job-tracker/"
+                "🔔 <b>AKHIL GOVT JOB ALERT</b>",
+                "🆕 <b>പുതിയ ജോലി അറിയിപ്പ്</b>",
+                "",
+                f"🏛️ <b>വകുപ്പ്:</b> {authority}",
+                f"💼 <b>തസ്തിക / Post:</b> {title}",
+                f"📂 <b>വിഭാഗം:</b> {category}",
+                "",
+                "🎓 <b>യോഗ്യത:</b> വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
+                "🎂 <b>പ്രായപരിധി:</b> വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
+                "🏷️ <b>SC ഇളവ് / സംവരണം:</b> വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
+                "💰 <b>ശമ്പളം:</b> വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
+                "📅 <b>അവസാന തീയതി:</b> സ്ഥിരീകരിച്ചിട്ടില്ല",
+                "",
+                f"🔗 <b>നേരിട്ടുള്ള ഔദ്യോഗിക ലിങ്ക്:</b> <a href=\"{notice_url}\">ഇവിടെ തുറക്കുക</a>",
+                "",
+                "⚠️ <b>ശ്രദ്ധിക്കുക:</b> ഇത് സാധ്യതയുള്ള അറിയിപ്പാണ്. അപേക്ഷ ഇപ്പോഴും തുറന്നിട്ടുണ്ടോ, യോഗ്യതയുണ്ടോ എന്ന് ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ ഉറപ്പാക്കുക.",
+                "📊 <b>Dashboard:</b> https://akhilesdf6.github.io/akhil-govt-job-tracker/"
             ]
             send_telegram("\\n".join(card))
     with open("seen_ids.json","w",encoding="utf-8") as f:
