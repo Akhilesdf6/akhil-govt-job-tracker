@@ -3,7 +3,7 @@
 A GitHub Actions based monitor for possible Kerala State and Central Government vacancies, with Telegram alerts and a GitHub Pages dashboard.
 
 ## What it does
-- Checks official Kerala PSC, SSC and RRB portal pages twice daily (08:30 and 19:30 India time).
+- Checks the configured official recruitment portals every 3 hours (GitHub Actions schedule; actual start may be delayed by GitHub).
 - Finds possible relevant notices using job-title keywords such as clerk, LDC, office assistant, data entry, MTS and NTPC.
 - Sends Telegram alerts for newly discovered links.
 - Publishes scan results to the dashboard: https://akhilesdf6.github.io/akhil-govt-job-tracker/
