@@ -2,6 +2,8 @@ import json, os, re, hashlib
 from datetime import datetime, timezone
 from urllib.parse import urljoin
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 
 # Official recruitment portals. This is a broad monitor, not an exhaustive feed:
@@ -42,7 +44,13 @@ ROLE_HINTS = re.compile(
     r"driver|stenographer|selection post)\b", re.I
 )
 SESSION = requests.Session()
-SESSION.headers.update({"User-Agent":"AkhilGovtJobTracker/1.1 (official recruitment notice monitor; low-frequency requests)"})
+retry_policy = Retry(total=3, connect=3, read=3, status=3, backoff_factor=1.5,
+    status_forcelist=(429, 500, 502, 503, 504),
+    allowed_methods=frozenset(["GET", "POST"]), respect_retry_after_header=True)
+adapter = HTTPAdapter(max_retries=retry_policy)
+SESSION.mount("https://", adapter)
+SESSION.mount("http://", adapter)
+SESSION.headers.update({"User-Agent":"AkhilGovtJobTracker/1.2 (official recruitment notice monitor; low-frequency requests)"})
 
 def apply_url(authority, notice_url):
     portals = {
@@ -97,7 +105,7 @@ def send_telegram(message):
     token, chat_id = os.getenv("TELEGRAM_BOT_TOKEN"), os.getenv("TELEGRAM_CHAT_ID")
     if not token or not chat_id:
         raise RuntimeError("Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID GitHub secret")
-    r = requests.post(f"https://api.telegram.org/bot{token}/sendMessage",
+    r = SESSION.post(f"https://api.telegram.org/bot{token}/sendMessage",
         json={"chat_id":chat_id,"text":message,"disable_web_page_preview":True}, timeout=20)
     r.raise_for_status()
     if not r.json().get("ok"):
@@ -121,15 +129,13 @@ def main():
     except (OSError, ValueError): pass
     new = [j for j in jobs if j["id"] not in old]
     if new:
-        # Clear bilingual alert. Keep all facts marked unverified until the official PDF is checked.
-        lines = [
-            "🔔 AKHIL GOVT JOB ALERT",
-            "പുതിയ റിക്രൂട്ട്മെന്റ് അറിയിപ്പ് കണ്ടെത്തി",
-            "━━━━━━━━━━━━━━━━━━━━"
-        ]
-        for index, j in enumerate(new[:6], start=1):
-            lines += [
-                f"📌 അറിയിപ്പ് {index}",
+        # Send every newly discovered notice separately; retry transient failures.
+        # seen_ids.json updates only after every Telegram alert succeeds.
+        for index, j in enumerate(new, start=1):
+            card = [
+                "🔔 AKHIL GOVT JOB ALERT",
+                "പുതിയ റിക്രൂട്ട്മെന്റ് അറിയിപ്പ് കണ്ടെത്തി",
+                f"📌 അറിയിപ്പ്: {index}/{len(new)}",
                 f"🏛️ വകുപ്പ്: {j['authority']}",
                 f"💼 തസ്തിക: {j['title']}",
                 f"📍 വിഭാഗം: {j['category']}",
@@ -138,34 +144,14 @@ def main():
                 "🏷️ SC ഇളവ്/സംവരണം: വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
                 "💰 ശമ്പളം: ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
                 "📅 അവസാന തീയതി: സ്ഥിരീകരിച്ചിട്ടില്ല — വിജ്ഞാപനം പരിശോധിക്കുക",
-                "⚠️ നിങ്ങൾക്ക് അപേക്ഷിക്കാമോ?: ഇനിയും സ്ഥിരീകരിച്ചിട്ടില്ല",
+                "⚠️ അപേക്ഷാ യോഗ്യത: ഇനിയും സ്ഥിരീകരിച്ചിട്ടില്ല",
                 f"📄 ഔദ്യോഗിക വിജ്ഞാപനം: {j['url']}",
                 f"📝 അപേക്ഷാ പോർട്ടൽ: {j['apply_url']}",
-                "ℹ️ ശ്രദ്ധിക്കുക: അപേക്ഷാ പോർട്ടൽ പൊതുവായ പോർട്ടലായിരിക്കാം; ഈ തസ്തികയുടെ Apply Now ലിങ്ക് വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക.",
-                "━━━━━━━━━━━━━━━━━━━━"
+                "ℹ️ അപേക്ഷാ പോർട്ടൽ പൊതുവായതാകാം; Apply Now ലിങ്ക് വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക.",
+                "📊 ഡാഷ്ബോർഡ്: https://akhilesdf6.github.io/akhil-govt-job-tracker/",
+                "അപേക്ഷിക്കുന്നതിന് മുമ്പ് ഔദ്യോഗിക വിജ്ഞാപനം വായിക്കുക."
             ]
-        if len(new) > 6:
-            lines.append(f"കൂടുതൽ {len(new)-6} അറിയിപ്പുകൾ ഡാഷ്ബോർഡിൽ കാണാം: https://akhilesdf6.github.io/akhil-govt-job-tracker/")
-        lines.append("അപേക്ഷിക്കുന്നതിന് മുമ്പ് ഔദ്യോഗിക വിജ്ഞാപനം വായിച്ച് യോഗ്യതയും അവസാന തീയതിയും ഉറപ്പാക്കുക.")
-        # Telegram text limit is 4096 characters. Send safe-sized chunks, never truncate a job card.
-        message = "\\n".join(lines)
-        if len(message) <= 3900:
-            send_telegram(message)
-        else:
-            for j in new[:6]:
-                card = [
-                    "🔔 AKHIL GOVT JOB ALERT",
-                    f"🏛️ വകുപ്പ്: {j['authority']}",
-                    f"💼 തസ്തിക: {j['title']}",
-                    f"📍 വിഭാഗം: {j['category']}",
-                    "🎓 യോഗ്യത / 🎂 പ്രായം / 💰 ശമ്പളം / 📅 അവസാന തീയതി: ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
-                    "🏷️ SC ഇളവ്/സംവരണം: വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
-                    "⚠️ അപേക്ഷാ യോഗ്യത: സ്ഥിരീകരിച്ചിട്ടില്ല",
-                    f"📄 വിജ്ഞാപനം: {j['url']}",
-                    f"📝 അപേക്ഷാ പോർട്ടൽ: {j['apply_url']}",
-                    "അപേക്ഷിക്കുന്നതിന് മുമ്പ് ഔദ്യോഗിക വിജ്ഞാപനം പരിശോധിക്കുക."
-                ]
-                send_telegram("\\n".join(card))
+            send_telegram("\\n".join(card))
     with open("seen_ids.json","w",encoding="utf-8") as f:
         json.dump(sorted(old|{j["id"] for j in jobs}),f)
     print(f"Checked {len(SOURCES)} official portals; collected {len(jobs)} possible notices; {len(new)} new; {len(errors)} source errors.")
