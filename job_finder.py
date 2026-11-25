@@ -6,8 +6,7 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 
-# Official recruitment portals. This is a broad monitor, not an exhaustive feed:
-# many departments publish vacancies only on their own regional/department pages.
+# Broad official-portal monitoring; not an exhaustive vacancy feed.
 SOURCES = [
     {"name":"Kerala PSC","url":"https://www.keralapsc.gov.in/","base":"https://www.keralapsc.gov.in","kind":"Kerala State"},
     {"name":"Kerala High Court","url":"https://hckerala.gov.in/","base":"https://hckerala.gov.in","kind":"Kerala State"},
@@ -36,21 +35,14 @@ SOURCES = [
     {"name":"ITPO Careers","url":"https://www.itpo.gov.in/career-at-itpo","base":"https://www.itpo.gov.in","kind":"Central PSU"},
     {"name":"National Career Service Government Vacancies","url":"https://www.ncs.gov.in/pages/govt-job-vacancies.aspx","base":"https://www.ncs.gov.in","kind":"Central Government"}
 ]
-KEYWORDS = re.compile(
-    r"\b(clerk|ldc|lower division|junior assistant|office assistant|office attendant|"
-    r"data entry|typist|computer assistant|computer operator|mts|multi tasking|chsl|ntpc|"
-    r"level[- ]?1|group[- ]?d|peon|attender|helper|gds|gramin dak|branch postmaster|abpm|"
-    r"postman|mail guard|postal assistant|apprentice|tradesman|constable|forest guard|"
-    r"driver|stenographer|selection post|recruitment|vacancy|vacancies|notification)\b", re.I
-)
-EXCLUDE_HINTS = re.compile(r"\b(shortlisted|short list|response sheet|answer key|admit card|hall ticket|result|ranked list|exam held|objection redressal|provisional list|final list)\b", re.I)
+EXCLUDE_HINTS = re.compile(r"\\b(shortlisted|short list|response sheet|answer key|admit card|hall ticket|call letter|interview|result|ranked list|exam held|objection redressal|provisional list|final list)\\b", re.I)
 ROLE_HINTS = re.compile(
-    r"\b(clerk|ldc|lower division|assistant|attendant|data entry|typist|computer|"
+    r"\\b(clerk|ldc|lower division|assistant|attendant|data entry|typist|computer|"
     r"operator|mts|multi tasking|chsl|ntpc|level[- ]?1|group[- ]?d|peon|helper|"
     r"support staff|watchman|security guard|fireman|cleaner|gds|gramin dak|"
     r"branch postmaster|abpm|postman|mail guard|postal assistant|apprentice|"
     r"tradesman|constable|forest guard|driver|stenographer|selection post|"
-    r"technician|lab assistant|staff nurse)\b", re.I
+    r"technician|lab assistant|staff nurse)\\b", re.I
 )
 SESSION = requests.Session()
 retry_policy = Retry(total=3, connect=3, read=3, status=3, backoff_factor=1.5,
@@ -59,24 +51,7 @@ retry_policy = Retry(total=3, connect=3, read=3, status=3, backoff_factor=1.5,
 adapter = HTTPAdapter(max_retries=retry_policy)
 SESSION.mount("https://", adapter)
 SESSION.mount("http://", adapter)
-SESSION.headers.update({"User-Agent":"AkhilGovtJobTracker/1.2 (official recruitment notice monitor; low-frequency requests)"})
-
-def apply_url(authority, notice_url):
-    portals = {
-        "Kerala PSC": "https://thulasi.psc.kerala.gov.in/thulasi/",
-        "SSC": "https://ssc.gov.in/",
-        "SSC Karnataka-Kerala Region": "https://ssckkr.gov.in/",
-        "India Post GDS": "https://indiapostgdsonline.gov.in/",
-        "India Post": "https://www.indiapost.gov.in/",
-        "IBPS": "https://www.ibps.in/",
-        "SBI Careers": "https://sbi.co.in/web/careers/current-openings",
-        "UPSC": "https://upsconline.nic.in/",
-        "India Post Recruitments": "https://www.indiapost.gov.in/vacancies/recruitments?hl=en-US",
-        "India Post GDS": "https://www.indiapost.gov.in/gdsonlineengagement",
-        "Railway RRB Apply": "https://www.rrbapply.gov.in/",
-    }
-    return portals.get(authority, notice_url)
-
+SESSION.headers.update({"User-Agent":"AkhilGovtJobTracker/1.3 (official recruitment notice monitor; low-frequency requests)"})
 
 def get_jobs():
     jobs, errors = [], []
@@ -87,38 +62,40 @@ def get_jobs():
             soup = BeautifulSoup(response.text, "html.parser")
             found = set()
             for a in soup.select("a[href]"):
-                # Many official portals show "View" as the link text; include
-                # surrounding row/card text to capture the actual post title.
                 parent_text = " ".join(a.parent.get_text(" ", strip=True).split()) if a.parent else ""
-                title = " ".join((a.get_text(" ", strip=True) + " " + parent_text).split())
+                link_text = " ".join(a.get_text(" ", strip=True).split())
+                # Parent/card text already includes link text on most portals; avoid duplication.
+                title = parent_text if parent_text and link_text.lower() in parent_text.lower() else " ".join((link_text + " " + parent_text).split())
                 href = urljoin(source["base"], a.get("href", ""))
                 if not title or len(title) < 4 or not ROLE_HINTS.search(title) or EXCLUDE_HINTS.search(title):
                     continue
                 if not href.startswith("https://") or href in found:
                     continue
-                # Ignore obvious navigation and social links.
                 if any(x in href.lower() for x in ("facebook.com", "instagram.com", "youtube.com", "twitter.com")):
                     continue
                 found.add(href)
+                # Trim repeated adjacent title fragments caused by anchor + parent text.
+                words = title.split()
+                half = len(words) // 2
+                if len(words) > 8 and words[:half] == words[half:]:
+                    title = " ".join(words[:half])
                 digest = hashlib.sha256((source["name"]+title+href).encode()).hexdigest()[:14]
                 jobs.append({
                     "id":digest, "authority":source["name"], "title":title[:180],
                     "url":href, "source_page":source["url"], "category":source["kind"],
-                    "status":"Possible recruitment notice — application status must be verified",
+                    "status":"Possible notice — verify official notification before applying",
                     "eligibility":"Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
-                    "apply_url": apply_url(source["name"], href),
                     "checked_at":datetime.now(timezone.utc).isoformat()
                 })
         except Exception as exc:
             errors.append({"source":source["name"],"error":str(exc)[:240]})
-    # Keep all unique matches found in this scan; dashboard labels them as unverified.
     unique = {j["id"]: j for j in jobs}
     return list(unique.values())[:300], errors
 
 def send_telegram(message):
     token, chat_id = os.getenv("TELEGRAM_BOT_TOKEN"), os.getenv("TELEGRAM_CHAT_ID")
     if not token or not chat_id:
-        raise RuntimeError("Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID GitHub secret")
+        raise RuntimeError("Missing Telegram GitHub secrets")
     r = SESSION.post(f"https://api.telegram.org/bot{token}/sendMessage",
         json={"chat_id":chat_id,"text":message,"disable_web_page_preview":True}, timeout=20)
     r.raise_for_status()
@@ -143,27 +120,17 @@ def main():
     except (OSError, ValueError): pass
     new = [j for j in jobs if j["id"] not in old]
     if new:
-        # Send every newly discovered notice separately; retry transient failures.
-        # seen_ids.json updates only after every Telegram alert succeeds.
-        for index, j in enumerate(new, start=1):
+        for j in new:
+            # Short, readable alert. No misleading generic application-portal link.
             card = [
                 "🔔 AKHIL GOVT JOB ALERT",
-                "പുതിയ റിക്രൂട്ട്മെന്റ് അറിയിപ്പ് കണ്ടെത്തി",
-                f"📌 അറിയിപ്പ്: {index}/{len(new)}",
+                "പുതിയ ജോലി അറിയിപ്പ് (പരിശോധിക്കേണ്ടത്)",
                 f"🏛️ വകുപ്പ്: {j['authority']}",
                 f"💼 തസ്തിക: {j['title']}",
-                f"📍 വിഭാഗം: {j['category']}",
-                "🎓 യോഗ്യത: ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
-                "🎂 പ്രായപരിധി: ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
-                "🏷️ SC ഇളവ്/സംവരണം: വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
-                "💰 ശമ്പളം: ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക",
-                "📅 അവസാന തീയതി: സ്ഥിരീകരിച്ചിട്ടില്ല — വിജ്ഞാപനം പരിശോധിക്കുക",
-                "⚠️ അപേക്ഷാ യോഗ്യത: ഇനിയും സ്ഥിരീകരിച്ചിട്ടില്ല",
-                f"📄 ഔദ്യോഗിക വിജ്ഞാപനം: {j['url']}",
-                f"📝 അപേക്ഷാ പോർട്ടൽ: {j['apply_url']}",
-                "ℹ️ അപേക്ഷാ പോർട്ടൽ പൊതുവായതാകാം; Apply Now ലിങ്ക് വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക.",
-                "📊 ഡാഷ്ബോർഡ്: https://akhilesdf6.github.io/akhil-govt-job-tracker/",
-                "അപേക്ഷിക്കുന്നതിന് മുമ്പ് ഔദ്യോഗിക വിജ്ഞാപനം വായിക്കുക."
+                "⚠️ യോഗ്യത/പ്രായം/SC ഇളവ്/അവസാന തീയതി: ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ പരിശോധിക്കുക.",
+                f"📄 ഔദ്യോഗിക ലിങ്ക്: {j['url']}",
+                "ℹ️ ഇത് സാധ്യതയുള്ള അറിയിപ്പാണ്; അപേക്ഷ തുറന്നിട്ടുണ്ടെന്നും നിങ്ങൾക്ക് യോഗ്യതയുണ്ടെന്നും ഇനിയും സ്ഥിരീകരിച്ചിട്ടില്ല.",
+                "📊 Dashboard: https://akhilesdf6.github.io/akhil-govt-job-tracker/"
             ]
             send_telegram("\\n".join(card))
     with open("seen_ids.json","w",encoding="utf-8") as f:
