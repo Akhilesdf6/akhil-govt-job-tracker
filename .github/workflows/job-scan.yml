@@ -4,21 +4,23 @@ on:
     paths:
       - "job_finder.py"
       - ".github/workflows/job-scan.yml"
+      - "requirements.txt"
   workflow_dispatch:
   schedule:
-    - cron: "0 */3 * * *" # Every 3 hours (UTC; GitHub may start scheduled jobs a little late)
+    - cron: "0 */3 * * *" # Every 3 hours UTC; GitHub may delay scheduled starts.
 permissions:
   contents: write
-  pages: write
-  id-token: write
 concurrency:
   group: job-scan
   cancel-in-progress: false
 jobs:
   scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -28,10 +30,17 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python job_finder.py
-      - name: Commit scan results
+      - name: Commit scan results safely
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/jobs.json seen_ids.json
-          git diff --cached --quiet || git commit -m "Update job scan results"
-          git push
+          if git diff --cached --quiet; then
+            echo "No scan-result changes to commit."
+            exit 0
+          fi
+          git commit -m "Update job scan results"
+          # Other workflows or manual edits may update main while this scan runs.
+          # Rebase the generated results on the newest main instead of failing the scan.
+          git pull --rebase origin main
+          git push origin HEAD:main
