@@ -6,8 +6,7 @@ on:
       - ".github/workflows/job-scan.yml"
   workflow_dispatch:
   schedule:
-    - cron: "0 3 * * *"   # 08:30 IST
-    - cron: "0 14 * * *"  # 19:30 IST
+    - cron: "0 */3 * * *" # Every 3 hours (UTC; GitHub may start scheduled jobs a little late)
 permissions:
   contents: write
   pages: write
