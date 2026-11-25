@@ -33,6 +33,7 @@ KEYWORDS = re.compile(
     r"postman|mail guard|postal assistant|apprentice|tradesman|constable|forest guard|"
     r"driver|stenographer|selection post|recruitment|vacancy|vacancies|notification)\b", re.I
 )
+EXCLUDE_HINTS = re.compile(r"\b(shortlisted|short list|response sheet|answer key|admit card|hall ticket|result|ranked list|exam held|objection redressal|provisional list|final list)\b", re.I)
 ROLE_HINTS = re.compile(
     r"\b(clerk|ldc|lower division|junior assistant|office assistant|office attendant|"
     r"data entry|typist|computer assistant|computer operator|mts|multi tasking|chsl|ntpc|"
@@ -42,6 +43,21 @@ ROLE_HINTS = re.compile(
 )
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent":"AkhilGovtJobTracker/1.1 (official recruitment notice monitor; low-frequency requests)"})
+
+def apply_url(authority, notice_url):
+    portals = {
+        "Kerala PSC": "https://thulasi.psc.kerala.gov.in/thulasi/",
+        "SSC": "https://ssc.gov.in/",
+        "SSC Karnataka-Kerala Region": "https://ssc.gov.in/",
+        "India Post GDS": "https://indiapostgdsonline.gov.in/",
+        "India Post": "https://www.indiapost.gov.in/",
+        "IBPS": "https://www.ibps.in/",
+        "SBI Careers": "https://sbi.co.in/web/careers/current-openings",
+        "UPSC": "https://upsconline.nic.in/",
+        "Railway RRB Apply": "https://www.rrbapply.gov.in/",
+    }
+    return portals.get(authority, notice_url)
+
 
 def get_jobs():
     jobs, errors = [], []
@@ -54,7 +70,7 @@ def get_jobs():
             for a in soup.select("a[href]"):
                 title = " ".join(a.get_text(" ", strip=True).split())
                 href = urljoin(source["base"], a.get("href", ""))
-                if not title or len(title) < 4 or not ROLE_HINTS.search(title):
+                if not title or len(title) < 4 or not ROLE_HINTS.search(title) or EXCLUDE_HINTS.search(title):
                     continue
                 if not href.startswith("https://") or href in found:
                     continue
@@ -66,8 +82,9 @@ def get_jobs():
                 jobs.append({
                     "id":digest, "authority":source["name"], "title":title[:180],
                     "url":href, "source_page":source["url"], "category":source["kind"],
-                    "status":"Possible relevant notice — official notification and eligibility must be checked",
-                    "eligibility":"Not verified. Check SSLC/+2 requirement, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+                    "status":"Possible recruitment notice — application status must be verified",
+                    "eligibility":"Not verified. Check qualification, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+                    "apply_url": apply_url(source["name"], href),
                     "checked_at":datetime.now(timezone.utc).isoformat()
                 })
         except Exception as exc:
@@ -104,12 +121,26 @@ def main():
     except (OSError, ValueError): pass
     new = [j for j in jobs if j["id"] not in old]
     if new:
-        lines=["🔔 AKHIL GOVT JOB TRACKER","New possible government-job notices (eligibility NOT verified):"]
-        for j in new[:10]:
-            lines += [f"• {j['authority']}: {j['title']}", j["url"]]
-        if len(new)>10:
-            lines.append(f"+ {len(new)-10} more. Dashboard: https://akhilesdf6.github.io/akhil-govt-job-tracker/")
-        lines.append("Before applying, verify SSLC/+2, age, SC rules, Kerala eligibility and last date in the official notice.")
+        lines=["🔔 AKHIL GOVT JOB TRACKER", "━━━━━━━━━━━━━━━━━━"]
+        for j in new[:6]:
+            lines += [
+                "🟡 NEW POSSIBLE RECRUITMENT",
+                f"🏢 Department: {j['authority']}",
+                f"💼 Post: {j['title']}",
+                f"📍 Location/Scope: {j['category']}",
+                "🎓 Qualification: See official notification",
+                "🎂 Age limit: See official notification",
+                "🏷️ SC reservation: Check notification (not inferred)",
+                "💰 Salary: See official notification",
+                "📅 Last date: Check official notification",
+                "⚠️ Eligibility: NOT VERIFIED",
+                f"🔗 Official Notification: {j['url']}",
+                f"📝 Official Apply Portal: {j['apply_url']}",
+                "━━━━━━━━━━━━━━━━━━"
+            ]
+        if len(new)>6:
+            lines.append(f"+ {len(new)-6} more possible notices. Dashboard: https://akhilesdf6.github.io/akhil-govt-job-tracker/")
+        lines.append("Apply only after confirming the application window is OPEN and you meet every condition.")
         send_telegram("\\n".join(lines)[:3900])
     with open("seen_ids.json","w",encoding="utf-8") as f:
         json.dump(sorted(old|{j["id"] for j in jobs}),f)
