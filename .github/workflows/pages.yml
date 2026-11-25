@@ -1,8 +1,8 @@
 name: Deploy job dashboard
 on:
-  push:
-    branches: [main]
-    paths: ["docs/**", ".github/workflows/pages.yml"]
+  workflow_run:
+    workflows: ["Government Job Scan"]
+    types: [completed]
   workflow_dispatch:
 permissions:
   contents: read
@@ -13,6 +13,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
