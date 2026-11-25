@@ -44,6 +44,13 @@ ROLE_HINTS = re.compile(
     r"tradesman|constable|forest guard|driver|stenographer|selection post|"
     r"technician|lab assistant|staff nurse)\b", re.I
 )
+# Broad second-pass terms intentionally include generic recruitment notices too.
+# This favors recall over precision; every result must be checked in its official notice.
+RECRUITMENT_HINTS = re.compile(
+    r"\b(recruitment|vacanc(?:y|ies)|notification|advertisement|apply online|"
+    r"applications? invited|engagement|appointment|direct recruitment|"
+    r"career opportunities|job openings|selection process|employment notice)\b", re.I
+)
 SESSION = requests.Session()
 retry_policy = Retry(total=3, connect=3, read=3, status=3, backoff_factor=1.5,
     status_forcelist=(429, 500, 502, 503, 504),
@@ -67,7 +74,7 @@ def get_jobs():
                 # Parent/card text already includes link text on most portals; avoid duplication.
                 title = parent_text if parent_text and link_text.lower() in parent_text.lower() else " ".join((link_text + " " + parent_text).split())
                 href = urljoin(source["base"], a.get("href", ""))
-                if not title or len(title) < 4 or not ROLE_HINTS.search(title) or EXCLUDE_HINTS.search(title):
+                if not title or len(title) < 4 or not (ROLE_HINTS.search(title) or RECRUITMENT_HINTS.search(title)) or EXCLUDE_HINTS.search(title):
                     continue
                 if not href.startswith("https://") or href in found:
                     continue
@@ -90,7 +97,7 @@ def get_jobs():
         except Exception as exc:
             errors.append({"source":source["name"],"error":str(exc)[:240]})
     unique = {j["id"]: j for j in jobs}
-    return list(unique.values())[:300], errors
+    return list(unique.values()), errors
 
 def send_telegram(message):
     token, chat_id = os.getenv("TELEGRAM_BOT_TOKEN"), os.getenv("TELEGRAM_CHAT_ID")
