@@ -1,15 +1,118 @@
 {
-  "updated_at": "2026-11-25T08:38:47.450791+00:00",
-  "jobs": [],
+  "updated_at": "2026-11-25T08:45:48.821055+00:00",
+  "jobs": [
+    {
+      "id": "feaf4884e581c8",
+      "authority": "SSC Karnataka-Kerala Region",
+      "title": "Selection Post",
+      "url": "https://ssckkr.gov.in/SelectionPost",
+      "source_page": "https://ssckkr.gov.in/",
+      "category": "Central",
+      "status": "Possible relevant notice — official notification and eligibility must be checked",
+      "eligibility": "Not verified. Check SSLC/+2 requirement, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T08:43:52.977152+00:00"
+    },
+    {
+      "id": "ec17347154ba3c",
+      "authority": "India Post GDS",
+      "title": "GDS Online Engagement Schedule-I,January-2025 Shortlisted Candidates",
+      "url": "https://indiapostgdsonline.gov.in",
+      "source_page": "https://indiapostgdsonline.gov.in/",
+      "category": "Central",
+      "status": "Possible relevant notice — official notification and eligibility must be checked",
+      "eligibility": "Not verified. Check SSLC/+2 requirement, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T08:44:24.124202+00:00"
+    },
+    {
+      "id": "c9efe411fb1179",
+      "authority": "IBPS",
+      "title": "CRP PO/MTs",
+      "url": "https://www.ibps.in/index.php/management-trainees/",
+      "source_page": "https://www.ibps.in/",
+      "category": "Public Sector Banks",
+      "status": "Possible relevant notice — official notification and eligibility must be checked",
+      "eligibility": "Not verified. Check SSLC/+2 requirement, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T08:44:27.799250+00:00"
+    },
+    {
+      "id": "29ad594b92d04f",
+      "authority": "IBPS",
+      "title": "CRP-PO/MTs-XVI",
+      "url": "https://www.ibps.in/wp-content/uploads/Detailed-Notification_CRP-PO-XVI_Final_V1_30.06.2026.pdf",
+      "source_page": "https://www.ibps.in/",
+      "category": "Public Sector Banks",
+      "status": "Possible relevant notice — official notification and eligibility must be checked",
+      "eligibility": "Not verified. Check SSLC/+2 requirement, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T08:44:27.799327+00:00"
+    },
+    {
+      "id": "e32932345dfd20",
+      "authority": "IBPS",
+      "title": "CRP-PO/MTs & SPL-XVI",
+      "url": "https://www.ibps.in/wp-content/uploads/PO_SPL_Combined_Window_CRP-XVI.pdf",
+      "source_page": "https://www.ibps.in/",
+      "category": "Public Sector Banks",
+      "status": "Possible relevant notice — official notification and eligibility must be checked",
+      "eligibility": "Not verified. Check SSLC/+2 requirement, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T08:44:27.799372+00:00"
+    },
+    {
+      "id": "76f9efd46ba2bb",
+      "authority": "IBPS",
+      "title": "CRP - PO/MTs",
+      "url": "https://www.ibps.in/index.php/management-trainees",
+      "source_page": "https://www.ibps.in/",
+      "category": "Public Sector Banks",
+      "status": "Possible relevant notice — official notification and eligibility must be checked",
+      "eligibility": "Not verified. Check SSLC/+2 requirement, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T08:44:27.799596+00:00"
+    },
+    {
+      "id": "f2428023e97cae",
+      "authority": "ISRO Careers",
+      "title": "ADVT NO. ISRO:ICRB:01(A-JPA):2026 Dated 27.07.2026: - Final/Revised Response Sheets for the CBT Held on 21-09-2026 for Assistant/UDC and JPA/Stenographer Posts and Redressal of Obj",
+      "url": "https://www.isro.gov.in/ICRB_Recruitment11.html",
+      "source_page": "https://www.isro.gov.in/Careers.html",
+      "category": "Central",
+      "status": "Possible relevant notice — official notification and eligibility must be checked",
+      "eligibility": "Not verified. Check SSLC/+2 requirement, age cutoff, SC reservation/relaxation, domicile, physical standards, fee and last date in the official notice.",
+      "checked_at": "2026-11-25T08:45:23.047332+00:00"
+    }
+  ],
   "source_errors": [
     {
       "source": "Kerala PSC",
       "error": "404 Client Error: Not Found for url: https://www.keralapsc.gov.in/extra-ordinary-gazette-date"
     },
     {
-      "source": "RRB",
-      "error": "HTTPSConnectionPool(host='rrb.indianrailways.gov.in', port=443): Read timed out. (read timeout=25)"
+      "source": "Kerala High Court",
+      "error": "HTTPSConnectionPool(host='hckerala.gov.in', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='hckerala.gov.in', port=443): Failed to resolve 'hckerala.gov.in' ([Errno -2] Name or service not k"
+    },
+    {
+      "source": "Railway RRB Apply",
+      "error": "404 Client Error: Not Found for url: https://www.rrbapply.gov.in/"
+    },
+    {
+      "source": "Indian Railways",
+      "error": "HTTPSConnectionPool(host='indianrailways.gov.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='indianrailways.gov.in', port=443) at 0x70b81b700500>, 'Connection to indianrailways.gov.in t"
+    },
+    {
+      "source": "NABARD Careers",
+      "error": "HTTPSConnectionPool(host='www.nabard.org', port=443): Max retries exceeded with url: /careers-notices1.aspx?cid=693&id=26 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.nabard.org', port=443) at 0x70b81b6df8c0>, 'Connection to ww"
+    },
+    {
+      "source": "Employment News",
+      "error": "HTTPSConnectionPool(host='employmentnews.gov.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='employmentnews.gov.in', port=443) at 0x70b81b7ac680>, 'Connection to employmentnews.gov.in t"
+    },
+    {
+      "source": "DRDO",
+      "error": "HTTPSConnectionPool(host='www.drdo.gov.in', port=443): Max retries exceeded with url: / (Caused by NewConnectionError(\"HTTPSConnection(host='www.drdo.gov.in', port=443): Failed to establish a new connection: [Errno 111] Connection refused\")"
+    },
+    {
+      "source": "ESIC",
+      "error": "HTTPSConnectionPool(host='www.esic.gov.in', port=443): Max retries exceeded with url: /recruitments (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.esic.gov.in', port=443) at 0x70b81b6c03e0>, 'Connection to www.esic.gov.in timed o"
     }
   ],
-  "notice": "Automated keyword discovery only. Always open the official notification and independently verify eligibility before applying."
+  "sources_checked": 18,
+  "notice": "Broad official-portal keyword monitoring, not exhaustive. Matches are unverified notices, not confirmed eligible vacancies. Read the official notification before applying."
 }
