@@ -1,0 +1,15 @@
+{
+  "updated_at": "2026-11-25T08:38:47.450791+00:00",
+  "jobs": [],
+  "source_errors": [
+    {
+      "source": "Kerala PSC",
+      "error": "404 Client Error: Not Found for url: https://www.keralapsc.gov.in/extra-ordinary-gazette-date"
+    },
+    {
+      "source": "RRB",
+      "error": "HTTPSConnectionPool(host='rrb.indianrailways.gov.in', port=443): Read timed out. (read timeout=25)"
+    }
+  ],
+  "notice": "Automated keyword discovery only. Always open the official notification and independently verify eligibility before applying."
+}
