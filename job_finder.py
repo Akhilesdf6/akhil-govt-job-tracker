@@ -152,7 +152,7 @@ def main():
                 "⚠️ <b>ശ്രദ്ധിക്കുക:</b> ഇത് സാധ്യതയുള്ള അറിയിപ്പാണ്. അപേക്ഷ ഇപ്പോഴും തുറന്നിട്ടുണ്ടോ, യോഗ്യതയുണ്ടോ എന്ന് ഔദ്യോഗിക വിജ്ഞാപനത്തിൽ ഉറപ്പാക്കുക.",
                 "📊 <b>Dashboard:</b> https://akhilesdf6.github.io/akhil-govt-job-tracker/"
             ]
-            send_telegram("\\n".join(card))
+            send_telegram("\n".join(card))
     with open("seen_ids.json","w",encoding="utf-8") as f:
         json.dump(sorted(old|{j["id"] for j in jobs}),f)
     print(f"Checked {len(SOURCES)} official portals; collected {len(jobs)} possible notices; {len(new)} new; {len(errors)} source errors.")
