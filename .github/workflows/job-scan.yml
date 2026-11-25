@@ -1,5 +1,9 @@
 name: Government Job Scan
 on:
+  push:
+    paths:
+      - "job_finder.py"
+      - ".github/workflows/job-scan.yml"
   workflow_dispatch:
   schedule:
     - cron: "0 3 * * *"   # 08:30 IST
